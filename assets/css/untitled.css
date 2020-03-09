@@ -15,9 +15,16 @@ header.masthead hr {
   border-color: #212529;
 }
 
+.btn-primary {
+  background-color: #11ffee00 !important;
+  border: 1px solid;
+  border-color: white;
+}
+
 .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
-  color: #212529;
-  background-color: #e2e6ea !important;
+  color: white;
+  background-color: #f05f40 !important;
+  border-color: #f05f40;
 }
 
 .portfolio-box .portfolio-box-caption {
