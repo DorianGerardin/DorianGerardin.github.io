@@ -21,6 +21,10 @@ header.masthead hr {
   border-color: white;
 }
 
+.btnDavTrist {
+  background-color: #f05f40 !important;
+}
+
 .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
   color: white;
   background-color: #f05f40 !important;
