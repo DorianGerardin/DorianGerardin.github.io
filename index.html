@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="Styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>All my apps</title>
+</head>
+<body>
+
+<div id="darkModeSwitch" class="flexCenter">
+    <div class="adaptiveColorText">Dark mode</div>
+    <label class="switch">
+        <input id="toggleTimerButton" type="checkbox" onchange="toggleDarkMode(this.checked)">
+        <span class="slider round"></span>
+    </label>
+</div>
+
+
+<h1>MY APPS</h1>
+<div id="app" class="fullWidth flexCenter hidden">
+    <div class="cardContainer">
+        <a href="https://alteredcounter.mrdo.fr/" target="_blank">
+        <div class="card fullSize">
+            <img class="cardImg" alt="Altered thumbnail">
+            <div class="cardContent">
+                <div class="cardTitle">Altered Counter</div>
+                <div class="cardDescription">A tool to help players easily count the points present in each of the biomes of their expeditions.</div>
+                <div class="cardTagsContainer">
+                    <div class="cardTag">TCG</div>
+                    <div class="cardTag">Counter</div>
+                    <div class="cardTag">Tool</div>
+                </div>
+            </div>
+        </div>
+        </a>
+
+        <a href="https://countryguessr.mrdo.fr/" target="_blank">
+            <div class="card fullSize">
+                <img class="cardImg" alt="Country Guessr thumbnail">
+                <div class="cardContent">
+                    <div class="cardTitle">Country Guessr</div>
+                    <div class="cardDescription">A geography game where each day you discover a new country based on its characteristics.</div>
+                    <div class="cardTagsContainer">
+                        <div class="cardTag">Geography</div>
+                        <div class="cardTag">Game</div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+    </div>
+</div>
+
+</body>
+
+<script src="Script.js"></script>
+</html>
