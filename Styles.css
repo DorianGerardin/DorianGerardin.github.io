@@ -26,6 +26,7 @@
 }
 
 * {
+    -webkit-tap-highlight-color:transparent;
     margin: 0;
     font-family: "Montserrat", sans-serif;
 }
