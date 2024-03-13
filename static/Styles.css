@@ -270,14 +270,17 @@ body {
         top: 0.75em;
         right: 0.75em;
     }
+    .cardTitle {
+        font-size: 1.2em;
+    }
     .replaceImgText {
-        font-size: 4em;
+        font-size: 3.5em;
     }
     .cardTagSelected {
         font-size: 1.25em;
     }
     .cardTag {
-        font-size: 1.2em;
+        font-size: 1.15em;
     }
 }
 
@@ -297,9 +300,6 @@ body {
     }
     .cardTag {
         font-size: 1.2em;
-    }
-    .cardDescription {
-         font-size: 1.1em;
     }
 }
 
