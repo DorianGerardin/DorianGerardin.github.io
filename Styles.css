@@ -270,6 +270,9 @@ body {
     .replaceImgText {
         font-size: 4em;
     }
+    .cardTagSelected {
+        font-size: 1.25em;
+    }
 }
 
 @media screen and (min-width: 481px) and (max-width: 767px) {
