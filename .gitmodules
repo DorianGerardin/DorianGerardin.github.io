@@ -1,3 +1,6 @@
 [submodule "altered"]
 	path = altered
 	url = https://github.com/DorianGerardin/Altered_Counter.git
+[submodule "loupgarou"]
+	path = loupgarou
+	url = https://github.com/DorianGerardin/LoupGarou_SpeechSynthesis.git

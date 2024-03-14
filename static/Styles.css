@@ -133,7 +133,7 @@ body {
     width: 95%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: auto;
+    grid-auto-rows: min-content;
     gap: 1em;
     margin-bottom: 2em;
 }
