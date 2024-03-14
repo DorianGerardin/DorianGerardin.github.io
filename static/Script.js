@@ -16,12 +16,16 @@ function SetCards() {
     allCards.forEach((card) => {
         let cardImg = card.querySelector('.cardImg')
         let cardTitle = card.querySelector(".cardTitle")
+        console.log(cardImg.src)
         if(cardImg.src === '') {
             let replacingNode = GetReplacingNode(cardTitle.textContent)
             cardImg.replaceWith(replacingNode)
         }
+        let target = card.getAttribute('data-target')
+        if(target !== "") {
+            card.querySelector(".linkArrow").classList.replace("hidden", "visible")
+        }
         card.addEventListener("click", () => {
-            let target = card.getAttribute('data-target')
             if(target === "") {
                 alert("Project not available")
             } else {
