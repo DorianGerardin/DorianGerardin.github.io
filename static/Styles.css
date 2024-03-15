@@ -4,8 +4,9 @@
     --title-color:#151414;
     --card-shadow: 2px 5px 16px 0px #00000040, 5px 5px 15px 5px #00000000;
     --card-border: none;
+    --card-bg-color: white;
     --card-noImg-bg-color: #0e0d0d;
-    --card-img-border-radius:0.75em 0.75em 0 0;
+    --card-img-border-radius: 0.7em 0.7em 0 0;
 
     --white-text-color: white;
     --dark-text-color:#151414;
@@ -13,10 +14,11 @@
 
 [data-theme="dark"] {
     --main-bg-color: #161616;
-    --main-text-color: #151414;
+    --main-text-color: #e8e8e8;
     --title-color:#e8e8e8;
     --card-shadow: none;
-    --card-border: 1.5px #e8e8e8 solid;
+    --card-border: 0.15em rgba(75, 75, 75, 0.5) solid;
+    --card-bg-color: #111111;
 
     --white-text-color: #e8e8e8;
     --dark-text-color:#151414;
@@ -67,7 +69,7 @@ body {
     right: 0.5em;
     background-image: url("img/link_arrow.svg");
     padding: 0.15em;
-    background-size: 80%;
+    background-size: 70%;
     background-position: center;
     background-repeat: no-repeat;
     height: 1em;
@@ -157,22 +159,19 @@ body {
 }
 
 .card {
+    color: var(--main-text-color);
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     row-gap: 0.5em;
-    transition: scale 0.1s ease-in-out;
+    transition: scale 0.15s ease-in-out;
     cursor: pointer;
-    background-color: white;
+    background-color: var(--card-bg-color);
     border: var(--card-border);
     border-radius: 0.8em 0.8em 0.75em 0.75em;
     box-shadow: var(--card-shadow);
     -webkit-box-shadow: var(--card-shadow);
-}
-
-.card:hover {
-    scale: 1.015;
 }
 
 .cardImg {
@@ -198,7 +197,7 @@ body {
     display: flex;
     flex-direction: column;
     row-gap: 0.5em;
-    margin-bottom: 0.25em;
+    margin-bottom: 0.15em;
 }
 
 .cardTitle {
@@ -278,10 +277,17 @@ body {
     display: flex;
 }
 
+@media (hover: hover) {
+    .card:hover {
+        scale: 1.02;
+    }
+}
+
 @media screen and (max-width: 480px) {
     .cardContainer {
         font-size: 0.85em;
         grid-template-columns: repeat(2, 1fr);
+        gap: 0.75em;
     }
     .switchThemeContainer {
         width: 2.5em;
@@ -307,6 +313,7 @@ body {
     .cardContainer {
         font-size: 0.9em;
         grid-template-columns: repeat(2, 1fr);
+        gap: 0.85em;
     }
     .switchThemeContainer {
         width: 2.5em;
@@ -325,6 +332,7 @@ body {
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .cardContainer {
         grid-template-columns: repeat(3, 1fr);
+        gap: 0.85em;
     }
     .switchThemeContainer {
         width: 3.25em;

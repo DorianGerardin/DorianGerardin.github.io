@@ -16,7 +16,6 @@ function SetCards() {
     allCards.forEach((card) => {
         let cardImg = card.querySelector('.cardImg')
         let cardTitle = card.querySelector(".cardTitle")
-        console.log(cardImg.src)
         if(cardImg.src === '') {
             let replacingNode = GetReplacingNode(cardTitle.textContent)
             cardImg.replaceWith(replacingNode)
@@ -67,7 +66,7 @@ function SetTags() {
         tag.addEventListener('mouseover', function() {
             this.style.boxShadow = `0px 0px 0px 2px ${bgColor} inset`;
             this.style.backgroundColor = 'transparent';
-            this.style.color = darkTextColor
+            this.style.color = style.getPropertyValue('--main-text-color')
         });
 
         tag.addEventListener('mouseout', function() {
