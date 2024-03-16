@@ -13,12 +13,13 @@
 }
 
 [data-theme="dark"] {
-    --main-bg-color: #161616;
+    --main-bg-color: #0e0e0e;
     --main-text-color: #e8e8e8;
     --title-color:#e8e8e8;
     --card-shadow: none;
-    --card-border: 0.15em rgba(75, 75, 75, 0.5) solid;
-    --card-bg-color: #111111;
+    /*--card-border: 0.15em rgba(75, 75, 75, 0.5) solid;*/
+    --card-border: none;
+    --card-bg-color: #212121;
 
     --white-text-color: #e8e8e8;
     --dark-text-color:#151414;
@@ -76,8 +77,8 @@ body {
     width: 1em;
     border-radius: 50%;
     background-color: rgba(0, 0, 0, 0.25);
-    border: rgba(232, 232, 232, 0.35) 2px solid;
-    backdrop-filter: blur(10px);
+    border: rgba(232, 232, 232, 0.35) 0.15em solid;
+    backdrop-filter: blur(3px);
 }
 
 .fullWidth {

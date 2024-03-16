@@ -1,6 +1,6 @@
 let selectedTags = []
 
-window.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
     FilterCardsByTags(selectedTags)
     SetCards()
     SetTags()
@@ -8,6 +8,7 @@ window.addEventListener("DOMContentLoaded", () => {
     preferredTheme ? SetTheme(preferredTheme) : detectSystemThemeChange(updateTheme);
     setTimeout(() => {
         document.body.classList.replace("visibilityHidden", "visibilityVisible")
+        document.body.style.transition = "background-color 0.25s ease-in-out, color 0.25s ease-in-out"
     }, 100)
 })
 
@@ -60,8 +61,7 @@ function SetTags() {
         let tagText = tag.textContent
         let style = getComputedStyle(document.documentElement)
         let darkTextColor = style.getPropertyValue('--dark-text-color')
-        //let bgColor = stringToColor(tagText)
-        let bgColor = stringToVibrantColor(tagText)
+        let bgColor = stringToColor(tagText)
         let textContrast = getContrastTextColor(bgColor)
         let tagColorText = textContrast === 1 ? darkTextColor : style.getPropertyValue('--white-text-color')
         tag.addEventListener('mouseover', function() {
@@ -132,24 +132,6 @@ function stringToColor(str) {
     for (let j = 0; j < 3; j++) {
         let value = (hash >> (j * 8)) & 0xFF;
         color += ('00' + value.toString(16)).substr(-2);
-    }
-
-    return color;
-}
-
-function stringToVibrantColor(str) {
-    let hash = 0;
-    for (let i = 0; i < str.length; i++) {
-        hash = str.charCodeAt(i) + ((hash << 5) - hash);
-    }
-
-    let color = '#';
-    for (let j = 0; j < 3; j++) {
-        // Utilisation de valeurs RVB plus élevées et ajout de variations
-        let value = ((hash >>> (j * 8)) + (j * 100)) % 256;
-        // Convertir la valeur en une chaîne hexadécimale de deux caractères
-        let hex = ('0' + value.toString(16)).slice(-2);
-        color += hex;
     }
 
     return color;
