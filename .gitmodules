@@ -4,3 +4,6 @@
 [submodule "loupgarou"]
 	path = loupgarou
 	url = https://github.com/DorianGerardin/LoupGarou_SpeechSynthesis.git
+[submodule "battleship_ai"]
+	path = battleship_ai
+	url = https://github.com/DorianGerardin/battleship_ai.git
