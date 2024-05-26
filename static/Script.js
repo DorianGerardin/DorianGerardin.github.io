@@ -20,10 +20,17 @@ function SetCards() {
         if(cardImg.src === '') {
             let replacingNode = GetReplacingNode(cardTitle.textContent)
             cardImg.replaceWith(replacingNode)
+        } else {
+            let cardContentBG =  document.createElement('img')
+            cardContentBG.src = cardImg.src
+            cardContentBG.classList.add('cardContentBg')
+            card.appendChild(cardContentBG)
         }
         let target = card.getAttribute('data-target')
         if(target !== "") {
-            card.querySelector(".linkArrow").classList.replace("hidden", "visible")
+            let linkArrowNode = document.createElement("div")
+            linkArrowNode.classList.add("linkArrow")
+            card.appendChild(linkArrowNode)
         }
         card.addEventListener("click", () => {
             if(target === "") {
@@ -67,7 +74,7 @@ function SetTags() {
         tag.addEventListener('mouseover', function() {
             this.style.boxShadow = `0px 0px 0px 2px ${bgColor} inset`;
             this.style.backgroundColor = 'transparent';
-            this.style.color = style.getPropertyValue('--main-text-color')
+            this.style.color = window.getComputedStyle(tag.closest('.cardContent')).color
         });
 
         tag.addEventListener('mouseout', function() {
