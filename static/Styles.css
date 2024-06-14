@@ -185,7 +185,7 @@ body {
     border-radius: var(--card-img-border-radius);
     aspect-ratio: 3/2;
     height: auto;
-    transition: scale 0.4s, transform 0.4s, filter 0.1s;
+    transition: scale 0.55s, transform 0.45s, filter 0.1s;
 }
 
 .replaceImg {
@@ -291,7 +291,7 @@ body {
     position: absolute;
     width: 100%;
     top: 50%;
-    scale: 2.25;
+    scale: 2.5;
     z-index: 0;
     filter: blur(12px) brightness(var(--cardContentBg-brightness));
 }
