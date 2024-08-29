@@ -7,6 +7,6 @@
 [submodule "battleship_ai"]
 	path = battleship_ai
 	url = https://github.com/DorianGerardin/battleship_ai.git
-[submodule "DiceRoll"]
-	path = DiceRoll
+[submodule "diceroll"]
+	path = diceroll
 	url = https://github.com/DorianGerardin/DiceRoll.git
