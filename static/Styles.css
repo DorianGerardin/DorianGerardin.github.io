@@ -179,13 +179,22 @@ body {
     -webkit-box-shadow: var(--card-shadow);
 }
 
-.cardImg {
+.thumbnailContainer {
+    overflow: hidden;
     z-index: 1;
     width: 100%;
     border-radius: var(--card-img-border-radius);
     aspect-ratio: 3/2;
     height: auto;
-    transition: scale 0.55s, transform 0.45s, filter 0.1s;
+}
+
+.card:hover .cardImg{
+    scale: 1.2;
+}
+
+.cardImg {
+    width: 100%;
+    transition: scale 0.3s ease-out, transform 0.45s, filter 0.1s;
 }
 
 .replaceImg {
@@ -298,14 +307,6 @@ body {
 
 .text-dark {
     color:var(--dark-text-color);
-}
-
-@media (hover: hover) {
-    .card:hover .cardImg {
-        scale: 2.5;
-        transform: translateY(2.5em);
-        filter: blur(3px);
-    }
 }
 
 @media screen and (max-width: 480px) {
