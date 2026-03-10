@@ -10,3 +10,6 @@
 [submodule "diceroll"]
 	path = diceroll
 	url = https://github.com/DorianGerardin/DiceRoll.git
+[submodule "clock"]
+	path = clock
+	url = https://github.com/DorianGerardin/clock.git
