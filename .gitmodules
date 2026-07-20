@@ -16,3 +16,6 @@
 [submodule "pizza-slicer"]
 	path = pizza-slicer
 	url = https://github.com/DorianGerardin/Pizza-Slicer.git
+[submodule "fluid-wallpaper"]
+	path = fluid-wallpaper
+	url = https://github.com/DorianGerardin/fluid-wallpaper.git
