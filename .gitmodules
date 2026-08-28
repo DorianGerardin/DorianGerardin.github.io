@@ -19,3 +19,6 @@
 [submodule "fluid-wallpaper"]
 	path = fluid-wallpaper
 	url = https://github.com/DorianGerardin/fluid-wallpaper.git
+[submodule "Orapa-Mine-Simulator"]
+	path = Orapa-Mine-Simulator
+	url = https://github.com/DorianGerardin/Orapa-Mine-Simulator.git
