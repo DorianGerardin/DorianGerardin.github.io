@@ -5,7 +5,8 @@
       "description": "A game made for a game jam on the theme: “Start with nothing”",
       "target": "https://dorian-grdn.itch.io/nothing-game",
       "thumbnail": "/static/img/thumbnails/nothingGame_2.png",
-      "darkText": true,
+      "whiteText": false,
+      "color": "#b3d4ff",
       "tags": [
         "Game",
         "Game Jam",
@@ -19,7 +20,8 @@
       "description": "A progressive web app simulator inspired by the Orapa Mine board game.",
       "target": "/orapa-mine-simulator",
       "thumbnail": "/static/img/thumbnails/orapa.png",
-      "darkText": false,
+      "whiteText": false,
+      "color": "#ffca28",
       "tags": [
         "PWA",
         "Claude",
@@ -31,7 +33,8 @@
       "description": "A tool to generate fluid wallpapers for mobile or desktop",
       "target": "/fluid-wallpaper",
       "thumbnail": "/static/img/thumbnails/fluid-wallpaper.png",
-      "darkText": false,
+      "whiteText": true,
+      "color": "#c36830",
       "tags": [
         "Web",
         "Tool",
@@ -43,7 +46,8 @@
       "description": "A tool to slice pizza",
       "target": "/pizza-slicer",
       "thumbnail": "/static/img/thumbnails/pizza-slicer.jpg",
-      "darkText": false,
+      "whiteText": false,
+      "color": "#ddba75",
       "tags": [
         "Web",
         "Tool",
@@ -55,7 +59,8 @@
       "description": "Just a basic animated clock",
       "target": "/clock",
       "thumbnail": "/static/img/thumbnails/clock.png",
-      "darkText": false,
+      "whiteText": true,
+      "color": "#ed1e1e",
       "tags": [
         "Widget",
         "Web",
@@ -67,7 +72,8 @@
       "description": "A tool for rolling one or more dice at a time",
       "target": "/dice-roll",
       "thumbnail": "/static/img/thumbnails/diceroll.png",
-      "darkText": true,
+      "whiteText": false,
+      "color": "",
       "tags": [
         "Widget",
         "Web"
@@ -78,7 +84,8 @@
       "description": "A tool for the Altered TCG to help players easily count the points of each players",
       "target": "/altered-counter",
       "thumbnail": "/static/img/thumbnails/altered.png",
-      "darkText": false,
+      "whiteText": false,
+      "color": "#25a0d9",
       "tags": [
         "TCG",
         "Tool",
@@ -92,7 +99,8 @@
       "description": "A geography daily game where you have to guess a country based on characteristics",
       "target": "https://countryguessr.mrdo.fr/",
       "thumbnail": "/static/img/thumbnails/countryGuessr.png",
-      "darkText": false,
+      "whiteText": false,
+      "color": "#3bc03b",
       "tags": [
         "Geography",
         "Game",
@@ -101,10 +109,11 @@
     },
     {
       "title": "Werewolf Game Master",
-      "description": "A tool for the \"Werewolf for a night\" game that works as a game master by calling out the roles during the night",
+      "description": "A game master tool for the board game \"Werewolf for a night\"",
       "target": "/werewolf-gm",
       "thumbnail": "/static/img/thumbnails/loupgarou.png",
-      "darkText": false,
+      "whiteText": true,
+      "color": "#a7912e",
       "tags": [
         "Tool",
         "Web"
@@ -115,7 +124,8 @@
       "description": "An infinite runner game where the controllers are your hands. Right for moving and left for power-ups",
       "target": "https://dorian-grdn.itch.io/hand-dodger",
       "thumbnail": "/static/img/thumbnails/handDodger.png",
-      "darkText": false,
+      "whiteText": true,
+      "color": "#030f2a",
       "tags": [
         "Game",
         "Unity",
@@ -125,10 +135,11 @@
     },
     {
       "title": "The Avenging Willow",
-      "description": "A tower-defense 3D isometric view created with a team of 5 while writing a GDD",
+      "description": "A prototype of a tower-defense 3D with isometric view created with a team of 5",
       "target": "https://dorian-grdn.itch.io/the-avenging-willow",
       "thumbnail": "/static/img/thumbnails/avenging_willow.png",
-      "darkText": false,
+      "whiteText": true,
+      "color": "#1f515f",
       "tags": [
         "Game",
         "Unity",
@@ -141,7 +152,8 @@
       "description": "A 3D game created with a team of 5 during a 30-hour game jam on the theme of time",
       "target": "https://dorian-grdn.itch.io/timeless-takedown",
       "thumbnail": "/static/img/thumbnails/timeless_takedown.png",
-      "darkText": false,
+      "whiteText": false,
+      "color": "#f7d361",
       "tags": [
         "Game",
         "Unity",
@@ -152,10 +164,11 @@
     },
     {
       "title": "Catchy Punchy Punch",
-      "description": "A 2.5D game inspired by One Finger Death Punch where you have to hit enemies coming from left and right at the right timing",
+      "description": "A 2.5D game inspired by One Finger Death Punch",
       "target": "https://dorian-grdn.itch.io/catchy-punchy-punch",
       "thumbnail": "/static/img/thumbnails/cpp.png",
-      "darkText": false,
+      "whiteText": false,
+      "color": "#ee66f0",
       "tags": [
         "Game",
         "Unity",
@@ -167,7 +180,8 @@
       "description": "A customized sea battle game implementing the HillClimbing algorithm",
       "target": "/battleship_ai",
       "thumbnail": "/static/img/thumbnails/battleshipai.png",
-      "darkText": true,
+      "whiteText": false,
+      "color": "",
       "tags": [
         "Game",
         "Web",
@@ -179,7 +193,8 @@
       "description": "3D game created during a Game Jam on the theme \"Cute and Creepy\" in a team of 5 persons",
       "target": "https://dorian-grdn.itch.io/charlies-sanity",
       "thumbnail": "/static/img/thumbnails/charlie_sanity.png",
-      "darkText": false,
+      "whiteText": true,
+      "color": "#688296",
       "tags": [
         "Game",
         "Unity",
