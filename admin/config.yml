@@ -28,7 +28,8 @@ collections:
               - { label: Description, name: description, widget: text }
               - { label: Lien (vide = "Project not available"), name: target, widget: string, required: false }
               - { label: Miniature, name: thumbnail, widget: image, required: false }
-              - { label: Texte sombre sur la carte, name: darkText, widget: boolean, default: false, required: false }
+              - { label: Texte clair, name: whiteText, widget: boolean, default: false, required: false }
+              - { label: Couleur de la carte, name: color, widget: color, required: false, allowInput: true, enableAlpha: false }
               - label: Tags
                 name: tags
                 widget: list

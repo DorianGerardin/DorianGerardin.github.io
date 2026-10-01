@@ -56,6 +56,7 @@ function CreateCard(project) {
 
     const card = el("div", "card fullSize hidden")
     card.setAttribute("data-target", project.target ?? "")
+    card.setAttribute("data-color", project.color ?? "")
 
     // Miniature (si absente, SetCards() affichera les initiales du titre)
     const thumbnailContainer = el("div", "thumbnailContainer")
@@ -67,7 +68,7 @@ function CreateCard(project) {
     thumbnailContainer.appendChild(img)
 
     // Contenu
-    const content = el("div", project.darkText ? "cardContent text-dark" : "cardContent")
+    const content = el("div", project.whiteText ? "cardContent text-white" : "cardContent")
     content.appendChild(el("div", "cardTitle", project.title ?? ""))
     content.appendChild(el("div", "cardDescription", project.description ?? ""))
 
@@ -85,6 +86,11 @@ function SetCards() {
     allCards.forEach((card) => {
         let cardImg = card.querySelector('.cardImg')
         let cardTitle = card.querySelector(".cardTitle")
+        if (card.dataset.color) {
+            card.style.setProperty("--custom-bg", card.dataset.color)
+            card.classList.add("hasColor")
+        }
+
         if(!cardImg.getAttribute('src')) {
             let replacingNode = GetReplacingNode(cardTitle.textContent)
             cardImg.replaceWith(replacingNode)
