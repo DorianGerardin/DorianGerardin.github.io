@@ -1,0 +1,35 @@
+backend:
+  name: github
+  repo: DorianGerardin/DorianGerardin.github.io
+  branch: main
+
+local_backend: true
+
+media_folder: static/img/thumbnails
+public_folder: /static/img/thumbnails
+
+collections:
+  - name: site
+    label: Site
+    files:
+      - name: projects
+        label: Projets
+        file: static/data/projects.json
+        format: json
+        fields:
+          - label: Projets
+            name: projects
+            widget: list
+            label_singular: projet
+            add_to_top: true
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Titre, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+              - { label: Lien (vide = "Project not available"), name: target, widget: string, required: false }
+              - { label: Miniature, name: thumbnail, widget: image, required: false }
+              - { label: Texte sombre sur la carte, name: darkText, widget: boolean, default: false, required: false }
+              - label: Tags
+                name: tags
+                widget: list
+                field: { label: Tag, name: tag, widget: string }

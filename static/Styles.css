@@ -177,6 +177,7 @@ body {
     border-radius: 0.8em 0.8em 0.75em 0.75em;
     box-shadow: var(--card-shadow);
     -webkit-box-shadow: var(--card-shadow);
+    padding-bottom: 0.35em;
 }
 
 .thumbnailContainer {
@@ -231,12 +232,15 @@ body {
 
 .cardTagsContainer {
     margin-top: 0.25em;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 0.4em;
+    column-gap: 0.4em;
 }
 
 .cardTag {
     font-size: 1.1em;
     display: inline-block;
-    margin: 0 0.1em 0.4em 0;
     padding: 0.25em 0.5em;
     background-color: var(--dark-text-color);
     color:var(--white-text-color);
