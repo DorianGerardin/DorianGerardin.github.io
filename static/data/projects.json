@@ -17,7 +17,7 @@
     {
       "title": "Orapa Mine Simulator",
       "description": "A progressive web app simulator inspired by the Orapa Mine board game.",
-      "target": "/Orapa-Mine-Simulator",
+      "target": "/orapa-mine-simulator",
       "thumbnail": "/static/img/thumbnails/orapa.png",
       "darkText": false,
       "tags": [
@@ -65,7 +65,7 @@
     {
       "title": "Dice Roll",
       "description": "A tool for rolling one or more dice at a time",
-      "target": "/diceroll",
+      "target": "/dice-roll",
       "thumbnail": "/static/img/thumbnails/diceroll.png",
       "darkText": true,
       "tags": [
@@ -76,7 +76,7 @@
     {
       "title": "Altered Counter",
       "description": "A tool for the Altered TCG to help players easily count the points of each players",
-      "target": "/altered",
+      "target": "/altered-counter",
       "thumbnail": "/static/img/thumbnails/altered.png",
       "darkText": false,
       "tags": [
@@ -102,7 +102,7 @@
     {
       "title": "Werewolf Game Master",
       "description": "A tool for the \"Werewolf for a night\" game that works as a game master by calling out the roles during the night",
-      "target": "/loupgarou",
+      "target": "/werewolf-gm",
       "thumbnail": "/static/img/thumbnails/loupgarou.png",
       "darkText": false,
       "tags": [
