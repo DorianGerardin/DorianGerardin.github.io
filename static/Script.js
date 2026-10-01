@@ -1,9 +1,10 @@
 let selectedTags = []
 
-document.addEventListener("DOMContentLoaded", () => {
-    FilterCardsByTags(selectedTags)
-    SetCards()
-    SetTags()
+const PROJECTS_URL = "static/data/projects.json"
+const IS_CMS_PREVIEW = new URLSearchParams(location.search).has("cms-preview")
+
+document.addEventListener("DOMContentLoaded", async () => {
+    RenderProjects(IS_CMS_PREVIEW ? [] : await LoadProjects())
     const preferredTheme = localStorage.getItem('theme');
     preferredTheme ? SetTheme(preferredTheme) : detectSystemThemeChange(updateTheme);
     setTimeout(() => {
@@ -12,12 +13,79 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 100)
 })
 
+function RenderProjects(projects) {
+    CreateCards(projects)
+    FilterCardsByTags(selectedTags)
+    SetCards()
+    SetTags()
+}
+
+if (IS_CMS_PREVIEW) {
+    window.addEventListener("message", (event) => {
+        if (event.origin !== location.origin) return
+        if (event.data?.type !== "cms-preview") return
+        RenderProjects(event.data.projects ?? [])
+    })
+}
+
+async function LoadProjects() {
+    try {
+        const response = await fetch(PROJECTS_URL, { cache: "no-cache" })
+        if (!response.ok) throw new Error(`HTTP ${response.status}`)
+        const data = await response.json()
+        return Array.isArray(data) ? data : (data.projects ?? [])
+    } catch (error) {
+        console.error("Impossible de charger les projets :", error)
+        return []
+    }
+}
+
+function CreateCards(projects) {
+    const container = document.getElementById("cardContainer")
+    container.innerHTML = ""
+    projects.forEach(project => container.appendChild(CreateCard(project)))
+}
+
+function CreateCard(project) {
+    const el = (tag, className, text) => {
+        const node = document.createElement(tag)
+        if (className) node.className = className
+        if (text !== undefined) node.textContent = text
+        return node
+    }
+
+    const card = el("div", "card fullSize hidden")
+    card.setAttribute("data-target", project.target ?? "")
+
+    // Miniature (si absente, SetCards() affichera les initiales du titre)
+    const thumbnailContainer = el("div", "thumbnailContainer")
+    const img = el("img", "cardImg")
+    if (project.thumbnail) {
+        img.src = project.thumbnail
+    }
+    img.alt = `${project.title} thumbnail`
+    thumbnailContainer.appendChild(img)
+
+    // Contenu
+    const content = el("div", project.darkText ? "cardContent text-dark" : "cardContent")
+    content.appendChild(el("div", "cardTitle", project.title ?? ""))
+    content.appendChild(el("div", "cardDescription", project.description ?? ""))
+
+    const tagsContainer = el("div", "cardTagsContainer")
+    ;(project.tags ?? []).forEach(tag => tagsContainer.appendChild(el("div", "cardTag", tag)))
+    content.appendChild(tagsContainer)
+
+    card.appendChild(thumbnailContainer)
+    card.appendChild(content)
+    return card
+}
+
 function SetCards() {
     let allCards = document.querySelectorAll(".card")
     allCards.forEach((card) => {
         let cardImg = card.querySelector('.cardImg')
         let cardTitle = card.querySelector(".cardTitle")
-        if(cardImg.src === '') {
+        if(!cardImg.getAttribute('src')) {
             let replacingNode = GetReplacingNode(cardTitle.textContent)
             cardImg.replaceWith(replacingNode)
         } else {
@@ -27,13 +95,13 @@ function SetCards() {
             card.appendChild(cardContentBG)
         }
         let target = card.getAttribute('data-target')
-        if(target !== "") {
+        if(target) {
             let linkArrowNode = document.createElement("div")
             linkArrowNode.classList.add("linkArrow")
             card.appendChild(linkArrowNode)
         }
         card.addEventListener("click", () => {
-            if(target === "") {
+            if(!target) {
                 alert("Project not available")
             } else {
                 window.open(target, "_blank");
@@ -99,7 +167,7 @@ function FilterCardsByTags(tags) {
     const cards = document.querySelectorAll('.card');
     cards.forEach(card => {
         const cardTags = Array.from(card.querySelectorAll('.cardTag')).map(tag => tag.textContent);
-       /* const containsAllTags = cardTags.every(tag => tag.includes(cardTags));*/
+        /* const containsAllTags = cardTags.every(tag => tag.includes(cardTags));*/
         const containsAllTags = arrIncludedInOtherArr(tags, cardTags)
         if (containsAllTags) {
             card.classList.replace("hidden", "visible")
@@ -200,4 +268,3 @@ function arrIncludedInOtherArr(arr1, arr2) {
 
     return true;
 }
-
