@@ -5,6 +5,7 @@ const IS_CMS_PREVIEW = new URLSearchParams(location.search).has("cms-preview")
 
 document.addEventListener("DOMContentLoaded", async () => {
     RenderProjects(IS_CMS_PREVIEW ? [] : await LoadProjects())
+    InitDetailsToggle()
     const preferredTheme = localStorage.getItem('theme');
     preferredTheme ? SetTheme(preferredTheme) : detectSystemThemeChange(updateTheme);
     setTimeout(() => {
@@ -12,6 +13,26 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.body.style.transition = "background-color 0.25s ease-in-out, color 0.25s ease-in-out"
     }, 100)
 })
+
+function InitDetailsToggle() {
+    const button = document.getElementById("toggleDetails")
+    if (!button) return
+    SetDetailsHidden(localStorage.getItem("hideDetails") === "true")
+    button.addEventListener("click", () => {
+        const hide = button.getAttribute("aria-pressed") !== "true"
+        SetDetailsHidden(hide)
+        localStorage.setItem("hideDetails", hide)
+    })
+}
+
+function SetDetailsHidden(hide) {
+    const button = document.getElementById("toggleDetails")
+    document.getElementById("cardContainer").classList.toggle("hideDetails", hide)
+    button.setAttribute("aria-pressed", hide)
+    const label = hide ? "Afficher les descriptions et les tags" : "Masquer les descriptions et les tags"
+    button.title = label
+    button.setAttribute("aria-label", label)
+}
 
 function RenderProjects(projects) {
     CreateCards(projects)
