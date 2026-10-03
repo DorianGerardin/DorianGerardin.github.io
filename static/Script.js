@@ -216,11 +216,17 @@ function AddSelectedTag(textContent, bgColor, textColor) {
     let selectedTagsContainer = document.getElementById("selectedTags")
     selectedTagsContainer.appendChild(newTag);
     selectedTags.push(textContent)
+    UpdateSelectedTagsVisibility()
+}
+
+function UpdateSelectedTagsVisibility() {
+    document.getElementById("selectedTags").classList.toggle("hasTags", selectedTags.length > 0)
 }
 
 function RemoveSelectedTag(tag) {
     selectedTags = selectedTags.filter(tagText => tagText !== tag.textContent)
     tag.remove()
+    UpdateSelectedTagsVisibility()
     FilterCardsByTags(selectedTags)
 }
 

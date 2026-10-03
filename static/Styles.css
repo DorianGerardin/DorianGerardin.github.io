@@ -16,7 +16,7 @@
     --white-text-color: #ffffff;
     --dark-text-color: #121212;
 
-    --mono: ui-monospace, "Cascadia Mono", "SFMono-Regular", Consolas, "Courier New", monospace;
+    --mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", "SFMono-Regular", Consolas, "Courier New", monospace;
 }
 
 [data-theme="dark"] {
@@ -27,7 +27,7 @@
 
     --card-bg-color: #111216;
     --card-noImg-bg-color: #1b1c22;
-    --outline: #c9ced6;
+    --outline: white;
     --accent: #00e5ff;
     --grid-line: rgba(255, 255, 255, 0.05);
 
@@ -59,7 +59,7 @@ h1 {
     font-size: 2.5em;
     letter-spacing: 0.3em;
     text-align: center;
-    padding-bottom: 0.6em;
+    padding-bottom: 1.5em;
     color: var(--title-color);
 }
 
@@ -180,7 +180,14 @@ body {
 
 #selectedTags {
     width: 95%;
-    display: inline-block;
+    display: none;
+}
+
+#selectedTags.hasTags {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 0.5em;
+    column-gap: 0.5em;
 }
 
 .cardContainer {
@@ -357,7 +364,6 @@ body {
     position: relative;
     cursor: pointer;
     display: inline-block;
-    margin: 0 0.5em 0.4em 0;
     padding: 0.3em 0.6em;
     font-family: var(--mono);
     font-size: 0.9em;
@@ -464,15 +470,18 @@ body {
    ========================================================== */
 @media screen and (max-width: 480px) {
     h1 {
-        font-size: 1.5em;
+        font-size: 1.75em;
         letter-spacing: 0.15em;
+    }
+    #app {
+         row-gap: 0.75em;
     }
     .cardContainer {
         font-size: 0.85em;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 0.75em;
     }
-    .detailsToggleLabel { display: none; }
+    .detailsToggle { font-size: 0.75em; padding: 0.35em 0.6em; }
     .toolbar { top: 0.5em; right: 0.5em; gap: 0.4em; }
     .toolbarButton, .switchThemeContainer {
         width: 3.4em;
@@ -487,6 +496,9 @@ body {
     h1 {
         font-size: 2.2em;
         letter-spacing: 0.2em;
+    }
+    #app {
+        row-gap: 0.75em;
     }
     .cardContainer {
         font-size: 0.9em;
